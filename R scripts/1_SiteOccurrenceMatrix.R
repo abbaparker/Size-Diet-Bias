@@ -103,13 +103,13 @@ summary(SO$Gen_Count)
 #write.csv(SO, "Pleist_AllEurasia_SiteOccMatrix.csv")
 
 #Alternative site/occurrence matrix, with entries varied if multiple species in genus
-mat2 <- matrix(nrow=length(sites), ncol=length(gen))
-row.names(mat2) <- sites
+mat2 <- matrix(nrow=length(sitenames), ncol=length(gen))
+row.names(mat2) <- sitenames
 colnames(mat2)<- c(gen)
 
-for (p in 1:length(sites)){
+for (p in 1:length(sitenames)){
   for (l in 1:length(gen)){
-    s <- sites[p]
+    s <- sitenames[p]
     g <- gen[l]
     n <- sum(with(df_Pleist,NAME==s & GENUS==g))
     if (n==0){
