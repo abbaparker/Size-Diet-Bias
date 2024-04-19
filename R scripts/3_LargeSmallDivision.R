@@ -149,7 +149,7 @@ phy <- phy %>% mutate(LogMass= log10(Mass.g)) %>% filter(!(Mass.Method == "Imput
 #remove aquatic species 
 marine <- phy %>% filter(Marine==1)
 marine <- marine %>% filter(!(Family.1.2 %in% c("Hippopotamidae", "Ursidae","Muridae","Canidae", 
-                                                "Otariidae", "Mustelidae")))
+                                                "Mustelidae")))
 # add freshwater fully-aquatic animals
 fwat <- phy %>% filter(Family.1.2 %in% c("Delphiniidae", "Iniidae", "Platanistidae",
                                          "Phocoenidae", "Trichechidae"))
@@ -337,6 +337,8 @@ pge.plot <- pge.plot+ geom_vline(xintercept = pge.x_coord, lty=2)
 #Divide large and small, only Eurasia species
 
 #list all species occurring in Eurasia
+## these A# dataframes need to be loaded in from large geographic data, please contact authors 
+  #for access if of interest
 Eurasia_species <- c(A1eur_species, A2eur_species, A5eur_species, A6eur_species,   
                      A7eur_species, A8eur_species)  #these are lists from other works of species within size/diet guilds
 Eurasia_species <- unique(Eurasia_species)
