@@ -21,7 +21,7 @@ theme_set(theme_bw())
 EM <- matrix(nrow=1,ncol=(1+max(SO$Gen_Count))) #creating empty data frame, for HID plus up to 52 species names
 MassFrame <- as.data.frame(EM)
 
-colnames(mmass_fin)  #logmass of genus is col 27
+colnames(mmass_fin)  #logmass of genus is col 5
 
 jdat <- SO[,2:453] #select genus occurrence columns of site/occurrence matrix
 jdat[jdat == 0] <- NA
@@ -34,7 +34,7 @@ for(k in 1:nrow(SO)){   #for each locality
   print(genu[1])
   for (p in (1:length(genu))) {
     genus <- as.character(genu[p])  #pulls genus name
-    ma <- mmass_fin[mmass_fin$Genus==genus,27]  #find logmass
+    ma <- mmass_fin[mmass_fin$Genus==genus,5]  #find logmass
     V[p+1] <- ma[1]
   }
   MassFrame <- rbind(MassFrame, V)
